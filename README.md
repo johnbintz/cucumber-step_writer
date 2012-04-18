@@ -12,7 +12,8 @@ And you set up the formatter like this:
 cucumber -f Cucumber::StepWriter --out features/step_definitions
 ```
 
-Then `features/step_definitions/given/i_set_something_up.rb` will be generated.
+Then `features/step_definitions/given/i_set_something_up.rb` will be generated with
+the content of the step stub.
 
 If you want to fire an action after steps are generated, like open a directory with
 the list of files so you can rearrange them, add a hook to Cucumber::StepWriter:
