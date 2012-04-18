@@ -14,6 +14,15 @@ cucumber -f Cucumber::StepWriter --out features/step_definitions
 
 Then `features/step_definitions/given/i_set_something_up.rb` will be generated.
 
+If you want to fire an action after steps are generated, like open a directory with
+the list of files so you can rearrange them, add a hook to Cucumber::StepWriter:
+
+``` ruby
+Cucumber::StepWriter.after_write do |dir|
+  system %{open #{dir}}
+end
+```
+
 TODO:
 
 * If you want it to generate for different languages, I take pull requests.
