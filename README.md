@@ -24,6 +24,12 @@ Cucumber::StepWriter.after_write do |dir|
 end
 ```
 
+Set up your sane defaults by using the generator:
+
+``` bash
+rails generator cucumber:step_writer
+```
+
 TODO:
 
 * If you want it to generate for different languages, I take pull requests.
