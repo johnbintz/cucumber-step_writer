@@ -28,7 +28,7 @@ module Cucumber
         step_name = Cucumber::Undefined === step.exception ? step.exception.step_name : step.name
         step_multiline_class = step.multiline_arg ? step.multiline_arg.class : nil
 
-        path = Pathname(@io).join(step.actual_keyword.downcase.strip, step_name.underscore.gsub(%r{[^\w]+}, '_') + '.rb')
+        path = Pathname(@io).join(step.actual_keyword.downcase.strip, step_name.downcase.gsub(%r{[^\w]+}, '_').gsub(%r{^_|_$}, '') + '.rb')
 
         if !path.file?
           puts yellow("Writing new step to #{path}.")
